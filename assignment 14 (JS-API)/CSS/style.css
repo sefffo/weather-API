@@ -1,0 +1,237 @@
+.bg-body-tertiary
+{
+
+    background-color: #1e202b !important;
+}
+body
+{
+
+    background-color: #1e202b;
+}
+.logo1
+{
+    width: 70px;
+}
+
+.navbar
+{
+
+    padding: 40px;;
+}
+
+.cloud
+{
+    color: #029ed9;
+}
+
+.nav-item a
+{
+
+    color: white;
+}
+
+
+.first .border
+{
+
+
+    color: #029ed9 !important;
+    border-color: #029ed9 !important;
+
+}
+
+
+.hov:hover a
+{
+    border-radius: 10px;
+    color: #029ed9 !important;
+    border-color: #029ed9 !important;
+    border-width: 10px;
+}
+
+
+.home
+{
+
+    background-image: url(../Images/banner.png);
+    background-position:center;
+
+    background-repeat: no-repeat;
+}
+/*----------------------------------- navbar end -------------------------------- */
+
+.context .form-control
+{
+    background-color: #1e202b;
+
+    width: 80%;
+
+    margin: auto;
+
+    color: white !important;
+
+
+
+
+}
+.form-control:focus 
+{
+    background-color: #1e202b;
+    border-color: transparent;
+    outline: 0;
+    /* box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25); */
+
+}
+
+
+.form-control::placeholder
+{
+    color:#6a726e;
+}
+.find
+{
+
+
+    background-color: #009ad8;
+
+    width: 100px;
+
+   /* margin: auto; */
+}
+
+
+
+
+
+.sec
+{
+
+    /* background-color:  */
+}
+
+
+.MYcards
+{
+
+    background-color: #1e202b;
+}
+
+/* -------------------------cards------------------------------- */
+
+.card
+{
+    border: none;
+
+}
+
+
+.MYcard .card-body
+{
+
+    background-color: #323544;
+
+}
+
+
+.MYcard .diff 
+{
+    background-color: #262936;
+}
+
+
+.MYcard  .main-head
+{
+    background-color: #2d303d;
+
+    color: #b5b1b4;
+}
+
+.MYcard .sec-head
+{
+    background-color: #222530;
+
+    color: #b5b1b4;
+}
+
+
+.MYcard .tex
+{
+
+    color: #b5b1b4;
+}
+
+
+
+
+.MYcard .num
+{
+    font-size: 90px;
+}
+
+.cardfoot img
+{
+    width: 15px;
+}
+
+
+
+/* --------footer------------- */
+footer
+{
+    background-color: #1e202b;
+}
+
+footer i
+{
+    font-size: 20px;
+    color:#009AD8;
+    margin: 0px 10px;
+    background-color:#1e202b;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+footer i:hover
+{
+    color: white;
+    background-color: #009AD8;
+}
+.info-div
+{
+    padding: 280px 15px 15px 15px;
+    width: 40%;
+}
+.custom-bg i 
+{
+    color: #009AD8;
+}
+.contact-us
+{
+    width: 40%;
+}
+.contact-us .form-control
+{
+    background-color: #1E202B;
+    color:white;
+    border: 1px solid #ACAEB5;
+}
+.contact-us .form-control:hover
+{
+    border-color: #009AD8;
+}
+.contact-us.form-control:focus
+{
+    background-color: #1E202B;
+    box-shadow: #009AD8;
+    color: white;
+}
+a.fit-content
+{
+    text-decoration: none;
+}
+a.fit-content:hover
+{
+    text-decoration: underline;
+}
+
+
