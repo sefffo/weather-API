@@ -6,171 +6,102 @@ let searchInput = document.getElementById("search");
 let seachButton = document.getElementById("Find");
 
 async function getLocation(location) {
-  let response = await fetch(
-    `https://api.weatherapi.com/v1/forecast.json?key=5ecdc9621d124315ae0170629241712&q=${location}&days=3`
-  );
-  let mydata = await response.json();
-  allLocations = mydata;
-
-  display();
-//   console.log(mydata);
+  try {
+    let response = await fetch(
+      `https://api.weatherapi.com/v1/forecast.json?key=5ecdc9621d124315ae0170629241712&q=${location}&days=3`
+    );
+    let mydata = await response.json();
+    allLocations = mydata;
+    display();
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+  }
 }
+
 getLocation("Cairo");
 
-function search()
-{
-
+function search() {
+  if (searchInput.value.trim()) {
     getLocation(searchInput.value);
-  
-
+  }
 }
 
+// Allow search on Enter key
+searchInput.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    search();
+  }
+});
+
 function display() {
-    let CurrentDate = new Date();
-    let locationName = allLocations.location.name;
-    let currentTemp = allLocations.current.temp_c;
-    let currentCondtionText = allLocations.current.condition.text;
-    let currentCondtionIcon = allLocations.current.condition.icon;
-    let currentDate = allLocations.forecast.forecastday.date;
-    
+  let CurrentDate = new Date();
+  let locationName = allLocations.location.name;
+  let currentTemp = allLocations.current.temp_c;
+  let currentCondtionText = allLocations.current.condition.text;
+  let currentCondtionIcon = allLocations.current.condition.icon;
+  let humidity = allLocations.current.humidity;
+  let windSpeed = allLocations.current.wind_kph;
+  let windDirection = allLocations.current.wind_dir;
 
-
-    let content = "";
-     content += `
-
-        <div class="card card1">
-        <div class="card-header main-head d-flex justify-content-between">
-          <span>${CurrentDate.toLocaleString('default' , {weekday:'long'})}</span>
-          <span>${CurrentDate.getDate()} ${CurrentDate.toLocaleString('default' , {month:'long'})}</span>
-
+  let content = "";
+  content += `
+    <div class="weather-card main-card">
+      <div class="card-header-modern">
+        <span class="day-name">${CurrentDate.toLocaleString('default', {weekday:'long'})}</span>
+        <span class="date-info">${CurrentDate.getDate()} ${CurrentDate.toLocaleString('default', {month:'long'})}</span>
+      </div>
+      <div class="card-body-modern">
+        <h5 class="location-name">${locationName}</h5>
+        <div class="temp-display">
+          <span class="temp-value">${currentTemp}</span>
+          <span class="temp-unit">°C</span>
         </div>
-        <div class="card-body">
-          <h5 class="card-title tex fw-bold">${locationName}</h5>
-          <div class="num text-white fw-bolder">
-            ${currentTemp}
-            <sup>o</sup>
-            c
+        <div class="weather-icon-section">
+          <img src="https:${currentCondtionIcon}" alt="${currentCondtionText}" class="weather-icon-large">
+          <span class="condition-text">${currentCondtionText}</span>
+        </div>
+        <div class="weather-details">
+          <div class="detail-item">
+            <i class="fa-solid fa-droplet"></i>
+            <span>${humidity}%</span>
           </div>
-          <div class="forcast-icon">
-
-            <img src="https:${currentCondtionIcon}" alt="${currentCondtionText}">
-
-            <span  class=" d-block text-primary">${currentCondtionText}</span>
+          <div class="detail-item">
+            <i class="fa-solid fa-wind"></i>
+            <span>${windSpeed} km/h</span>
           </div>
-
-          <div class="cardfoot d-flex py-3">
-            <img src="./Images/icon-umberella.png" alt="">  <span class="mx-3 tex">20%</span>
-
-            <img src="./Images/icon-wind.png" alt="">   <span class="mx-3 tex">18km/h</span>
-            <img src="./Images/icon-compass.png" alt="">   <span class="mx-3 tex">east</span>
+          <div class="detail-item">
+            <i class="fa-solid fa-compass"></i>
+            <span>${windDirection}</span>
           </div>
         </div>
       </div>
-    
+    </div>
+  `;
 
-
-
-    `;
-
-
-    allLocations.forecast.forecastday.forEach((day,index) => {
-
-        if(index>0)
-        {
-
-            
-        if(index==1){
-            content+=`
-
-
-        <div class="card">
-            <div class="card-header sec-head d-flex justify-content-center">
-                <span>${new Date(day.date).toLocaleString('default' , {weekday : 'long'})}</span>
+  allLocations.forecast.forecastday.forEach((day, index) => {
+    if (index > 0) {
+      const dayName = new Date(day.date).toLocaleString('default', {weekday: 'long'});
+      const cardClass = index === 1 ? 'secondary-card' : 'tertiary-card';
+      
+      content += `
+        <div class="weather-card ${cardClass}">
+          <div class="card-header-modern ${index === 1 ? 'alt-bg' : ''}">
+            <span class="day-name">${dayName}</span>
+          </div>
+          <div class="card-body-modern centered">
+            <div class="weather-icon-section">
+              <img src="https:${day.day.condition.icon}" alt="${day.day.condition.text}" class="weather-icon-medium">
             </div>
-                <div class="card-body diff d-flex justify-content-center align-items-center flex-column">
-
-            <div class="forcast-icon">
-                <img src="https:${day.day.condition.icon}" alt="${day.day.condition.text}">
+            <div class="temp-display-small">
+              <span class="temp-max">${day.day.maxtemp_c}°C</span>
+              <span class="temp-min">${day.day.mintemp_c}°C</span>
             </div>
-
-            <div class="num2 text-white fs-3 fw-bold">
-                ${day.day.maxtemp_c}
-                <sup>o</sup>
-                C
-            </div>
-            <div class="small-num tex">
-                <span>
-                ${day.day.mintemp_c}
-              
-                <sup>o</sup>
-                 C
-                </span>
-            </div>
-            <div class="condition">
-                <span class="text-primary">${day.day.condition.text}</span>
-            </div>
-          
-          
-            </div>
+            <div class="condition-text-small">${day.day.condition.text}</div>
+          </div>
         </div>
-                
-                
-    `
+      `;
+    }
+  });
 
-
-        }
-
-
-        else if(index==2)
-        {
-
-            content+=
-            `
-                <div class="card">
-                    <div class="card-header main-head d-flex justify-content-center">
-                        <span>${new Date(day.date).toLocaleString('default',{weekday:'long'})}</span>
-                    </div>
-                <div class="card-body  d-flex justify-content-center align-items-center flex-column">
-
-                    <div class="forcast-icon">
-                        <img src="https:${day.day.condition.icon}" alt="${day.day.condition.text}">
-                </div>
-
-                <div class="num2 text-white fs-3 fw-bold">
-                    ${day.day.maxtemp_c}
-                    <sup>o</sup>
-                    c
-                </div>
-                <div class="small-num tex">
-                    <span>
-
-                    ${day.day.mintemp_c}
-                    <sup>o</sup>
-                    </span>
-                </div>
-                <div class="condition">
-                <span class="text-primary">${day.day.condition.text}</span>
-                </div>
-            
-            
-                </div>
-
-            </div>
-
-            
-        `
-        }
-
-
-
-
-
-        }
-        
-    });
-
-
-    document.getElementById('card-content').innerHTML=content;
+  document.getElementById('card-content').innerHTML = content;
 }
-
-

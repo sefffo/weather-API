@@ -12,65 +12,67 @@
 </head>
 <body>
   <div class="app-bg">
-    <div class="weather-wrapper">
+    <div class="weather-container">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg bg-body-tertiary app-navbar">
+      <nav class="navbar navbar-expand-lg modern-navbar">
         <div class="container-fluid">
           <a class="navbar-brand d-flex align-items-center gap-2" href="#">
             <img src="./Images/logo@2x.png" alt="weather logo" class="logo1">
-            <span class="text-white fw-bold">Weather</span>
+            <span class="text-white fw-bold brand-text">Weather</span>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item me-3 first">
-                <a class="border border-2 rounded-pill nav-link active text-white" aria-current="page" href="#">Home</a>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+              <li class="nav-item">
+                <a class="nav-link active-link" aria-current="page" href="#">Home</a>
               </li>
-              <li class="hov nav-item me-3">
+              <li class="nav-item">
                 <a class="nav-link" href="#">News</a>
               </li>
-              <li class="hov nav-item me-3">
+              <li class="nav-item">
                 <a class="nav-link" href="#">Live Camera</a>
               </li>
-              <li class="hov nav-item me-3">
-                <a class="nav-link text-white" href="#">Contact</a>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <!-- Search + cards -->
-      <main class="weather-card">
-        <form class="search-row" onsubmit="event.preventDefault(); search();">
-          <input type="text" class="form-control search-input" placeholder="Find your location..." id="search">
-          <button type="submit" class="btn search-btn" id="Find">
+      <!-- Search Section -->
+      <div class="search-section">
+        <div class="search-wrapper">
+          <input type="text" class="search-input" placeholder="Find your location..." id="search">
+          <button class="search-btn" onclick="search()" id="Find">
             <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="btn-text">Find</span>
           </button>
-        </form>
+        </div>
+      </div>
 
-        <section class="weather-main">
-          <div class="card-group" id="card-content"></div>
-        </section>
-      </main>
+      <!-- Weather Cards -->
+      <div class="weather-cards-container">
+        <div class="card-group" id="card-content"></div>
+      </div>
 
       <!-- Footer -->
-      <footer class="py-4 custom-bg app-footer">
-        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 container">
-          <div class="flex-grow-1 w-100 w-md-50">
-            <input placeholder="Enter your email to subscribe..." type="email" class="form-control rounded-5 p-3">
+      <footer class="modern-footer">
+        <div class="footer-content">
+          <div class="subscribe-section">
+            <input placeholder="Enter your email to subscribe..." type="email" class="footer-input">
+            <button class="subscribe-btn">Subscribe</button>
           </div>
-          <button class="bg-primary text-white border-0 rounded-pill px-4 py-3">Subscribe</button>
           <div class="social-icons">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-google"></i>
-            <i class="fa-brands fa-pinterest"></i>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-google"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
           </div>
         </div>
-        <p class="text-white my-4 mx-auto text-center small">&copy; 2014 Company name. Designed by Themezy. All rights reserved.</p>
+        <p class="copyright">&copy; 2025 Weather App. Designed with ❤️ by Saif. All rights reserved.</p>
       </footer>
     </div>
   </div>
