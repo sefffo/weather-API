@@ -5,141 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather News - Weather Pro</title>
 
-    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="./CSS/fontawesome-free-6.6.0-web/css/all.min.css">
-    <link rel="stylesheet" href="./CSS/fontawesome-free-6.6.0-web/css/fontawesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
   <div class="app-bg">
-    <div class="weather-container">
+    <div class="container">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg modern-navbar">
+      <nav class="navbar navbar-expand-lg navbar-dark my-navbar">
         <div class="container-fluid">
           <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
             <div class="logo-circle">
               <i class="fa-solid fa-cloud-sun"></i>
             </div>
-            <span class="text-white fw-bold brand-text">Weather Pro</span>
+            <span class="fw-bold">Weather Pro</span>
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active-link" aria-current="page" href="news.html">News</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="live-camera.html">Live Camera</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link active" href="news.html">News</a></li>
+              <li class="nav-item"><a class="nav-link" href="live-camera.html">Live Camera</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <!-- News Header -->
-      <div class="page-header">
-        <h1 class="page-title"><i class="fa-solid fa-newspaper"></i> Weather News</h1>
-        <p class="page-subtitle">Stay updated with the latest weather alerts and forecasts</p>
+      <div class="text-center text-white my-5">
+        <h1 class="display-4 fw-bold"><i class="fa-solid fa-newspaper"></i> Weather News</h1>
+        <p class="lead">Stay updated with the latest weather alerts</p>
       </div>
 
-      <!-- News Grid -->
-      <div class="news-container">
-        <div class="news-grid">
-          <!-- News Article 1 -->
-          <article class="news-card">
-            <div class="news-icon">
-              <i class="fa-solid fa-cloud-showers-heavy"></i>
+      <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <div class="bg-primary text-white rounded-circle d-inline-flex p-3 mb-3">
+                <i class="fa-solid fa-cloud-showers-heavy fa-2x"></i>
+              </div>
+              <small class="text-muted d-block mb-2">December 23, 2025</small>
+              <h5 class="card-title">Heavy Rainfall Expected</h5>
+              <p class="card-text">Meteorologists predict significant rainfall. Residents advised to prepare for potential flooding.</p>
+              <a href="#" class="btn btn-primary btn-sm">Read More</a>
             </div>
-            <div class="news-date">December 23, 2025</div>
-            <h3 class="news-title">Heavy Rainfall Expected This Week</h3>
-            <p class="news-excerpt">Meteorologists predict significant rainfall across multiple regions. Residents are advised to prepare for potential flooding and take necessary precautions.</p>
-            <a href="#" class="news-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-          </article>
+          </div>
+        </div>
 
-          <!-- News Article 2 -->
-          <article class="news-card">
-            <div class="news-icon warning">
-              <i class="fa-solid fa-temperature-high"></i>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <div class="bg-warning text-white rounded-circle d-inline-flex p-3 mb-3">
+                <i class="fa-solid fa-temperature-high fa-2x"></i>
+              </div>
+              <small class="text-muted d-block mb-2">December 22, 2025</small>
+              <h5 class="card-title">Heat Wave Alert</h5>
+              <p class="card-text">Record-breaking temperatures expected. Stay hydrated and avoid outdoor activities.</p>
+              <a href="#" class="btn btn-warning btn-sm">Read More</a>
             </div>
-            <div class="news-date">December 22, 2025</div>
-            <h3 class="news-title">Heat Wave Alert for Southern Regions</h3>
-            <p class="news-excerpt">Record-breaking temperatures expected in southern areas. Health authorities recommend staying hydrated and avoiding outdoor activities during peak hours.</p>
-            <a href="#" class="news-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-          </article>
+          </div>
+        </div>
 
-          <!-- News Article 3 -->
-          <article class="news-card">
-            <div class="news-icon info">
-              <i class="fa-solid fa-wind"></i>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <div class="bg-info text-white rounded-circle d-inline-flex p-3 mb-3">
+                <i class="fa-solid fa-wind fa-2x"></i>
+              </div>
+              <small class="text-muted d-block mb-2">December 21, 2025</small>
+              <h5 class="card-title">Strong Winds Forecasted</h5>
+              <p class="card-text">Maritime authorities issue warnings for strong coastal winds. Sailors advised to postpone activities.</p>
+              <a href="#" class="btn btn-info btn-sm">Read More</a>
             </div>
-            <div class="news-date">December 21, 2025</div>
-            <h3 class="news-title">Strong Winds Forecasted for Coastal Areas</h3>
-            <p class="news-excerpt">Maritime authorities issue warnings for strong winds along the coast. Fishermen and sailors are advised to postpone sea activities.</p>
-            <a href="#" class="news-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-          </article>
+          </div>
+        </div>
 
-          <!-- News Article 4 -->
-          <article class="news-card">
-            <div class="news-icon success">
-              <i class="fa-solid fa-sun"></i>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <div class="bg-success text-white rounded-circle d-inline-flex p-3 mb-3">
+                <i class="fa-solid fa-sun fa-2x"></i>
+              </div>
+              <small class="text-muted d-block mb-2">December 20, 2025</small>
+              <h5 class="card-title">Perfect Weekend Weather</h5>
+              <p class="card-text">Clear skies and mild temperatures make this weekend ideal for outdoor activities.</p>
+              <a href="#" class="btn btn-success btn-sm">Read More</a>
             </div>
-            <div class="news-date">December 20, 2025</div>
-            <h3 class="news-title">Perfect Weather for Weekend Activities</h3>
-            <p class="news-excerpt">Clear skies and mild temperatures make this weekend ideal for outdoor events. Parks and recreational areas expect high visitor numbers.</p>
-            <a href="#" class="news-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-          </article>
+          </div>
+        </div>
 
-          <!-- News Article 5 -->
-          <article class="news-card">
-            <div class="news-icon">
-              <i class="fa-solid fa-snowflake"></i>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <div class="bg-primary text-white rounded-circle d-inline-flex p-3 mb-3">
+                <i class="fa-solid fa-snowflake fa-2x"></i>
+              </div>
+              <small class="text-muted d-block mb-2">December 19, 2025</small>
+              <h5 class="card-title">First Snowfall</h5>
+              <p class="card-text">Mountain regions experience first snowfall. Ski resorts prepare for winter season.</p>
+              <a href="#" class="btn btn-primary btn-sm">Read More</a>
             </div>
-            <div class="news-date">December 19, 2025</div>
-            <h3 class="news-title">First Snowfall of the Season</h3>
-            <p class="news-excerpt">Mountain regions experience the first snowfall, attracting winter sports enthusiasts. Ski resorts prepare for the upcoming season.</p>
-            <a href="#" class="news-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-          </article>
+          </div>
+        </div>
 
-          <!-- News Article 6 -->
-          <article class="news-card">
-            <div class="news-icon warning">
-              <i class="fa-solid fa-triangle-exclamation"></i>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <div class="bg-danger text-white rounded-circle d-inline-flex p-3 mb-3">
+                <i class="fa-solid fa-triangle-exclamation fa-2x"></i>
+              </div>
+              <small class="text-muted d-block mb-2">December 18, 2025</small>
+              <h5 class="card-title">Storm Warning</h5>
+              <p class="card-text">Severe storm approaching. Emergency services on alert. Stay indoors and secure outdoor items.</p>
+              <a href="#" class="btn btn-danger btn-sm">Read More</a>
             </div>
-            <div class="news-date">December 18, 2025</div>
-            <h3 class="news-title">Storm Warning Issued</h3>
-            <p class="news-excerpt">Severe storm approaching from the west. Emergency services on high alert. Citizens urged to secure outdoor items and stay indoors.</p>
-            <a href="#" class="news-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-          </article>
+          </div>
         </div>
       </div>
 
-      <!-- Footer -->
-      <footer class="modern-footer">
-        <div class="footer-content">
-          <div class="subscribe-section">
-            <input placeholder="Enter your email to subscribe..." type="email" class="footer-input">
-            <button class="subscribe-btn">Subscribe</button>
-          </div>
-          <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          </div>
-        </div>
-        <p class="copyright">&copy; 2025 Weather Pro. Designed with ❤️ by Saif. All rights reserved.</p>
+      <footer class="text-center text-white py-4 mt-5">
+        <p>&copy; 2025 Weather Pro. Designed by Saif</p>
       </footer>
     </div>
   </div>
 
-  <script src="./JS/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
