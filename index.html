@@ -11,97 +11,69 @@
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
-<div  class="home min-vh-100">
-  <!-- ----------------------------------navbar start------------------------------------ -->
-  <nav>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid"  >
-
-          <div class=" logo d-flex justify-content-between" >
-            <a class="navbar-brand" href="#">
-              
-              <img src="./Images/logo@2x.png" alt="weather logo" class="logo1">
-              <!-- <i class="fa-solid fa-cloud  fs-1 cloud"></i> -->
-
-             <span class="text-white fw-bolder"> Weather </span>
-             
-            </a>
-          </div>
-          
+  <div class="app-bg">
+    <div class="weather-wrapper">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary app-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+            <img src="./Images/logo@2x.png" alt="weather logo" class="logo1">
+            <span class="text-white fw-bold">Weather</span>
+          </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
-
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item me-3 first">
-                <a class="  border border-2 rounded-pill nav-link active text-white" aria-current="page" href="#">Home</a>
+                <a class="border border-2 rounded-pill nav-link active text-white" aria-current="page" href="#">Home</a>
               </li>
-              <li class=" hov nav-item me-3">
+              <li class="hov nav-item me-3">
                 <a class="nav-link" href="#">News</a>
               </li>
-              <li class=" hov nav-item me-3">
+              <li class="hov nav-item me-3">
                 <a class="nav-link" href="#">Live Camera</a>
               </li>
-              <li class=" hov nav-item me-3">
+              <li class="hov nav-item me-3">
                 <a class="nav-link text-white" href="#">Contact</a>
               </li>
-             
             </ul>
           </div>
         </div>
       </nav>
 
-  </nav>
-  <!-- ----------------------------------navbar end------------------------------------ -->
-  <!-- -------------------------------------input start------------------------------------------ -->
+      <!-- Search + cards -->
+      <main class="weather-card">
+        <form class="search-row" onsubmit="event.preventDefault(); search();">
+          <input type="text" class="form-control search-input" placeholder="Find your location..." id="search">
+          <button type="submit" class="btn search-btn" id="Find">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
 
- 
-  <div class="context container d-flex w-50">
+        <section class="weather-main">
+          <div class="card-group" id="card-content"></div>
+        </section>
+      </main>
 
-    <input type="text" class="form-control my-5 rounded-pill py-3 " placeholder="Find your location..." id="search" >
-    <button class="btn btn-primary find rounded-pill m-auto py-3 " onclick="search()" id="Find">Find</button>
-  </div>
-  
-
-  <!-- -------------------------------------input end------------------------------------------ -->
-  <!-- -------------------------------------cards start------------------------------------------ -->
-
-  <div class="MYcard container ">  
-    <div class="card-group" id="card-content">
-     
+      <!-- Footer -->
+      <footer class="py-4 custom-bg app-footer">
+        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 container">
+          <div class="flex-grow-1 w-100 w-md-50">
+            <input placeholder="Enter your email to subscribe..." type="email" class="form-control rounded-5 p-3">
+          </div>
+          <button class="bg-primary text-white border-0 rounded-pill px-4 py-3">Subscribe</button>
+          <div class="social-icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-google"></i>
+            <i class="fa-brands fa-pinterest"></i>
+          </div>
+        </div>
+        <p class="text-white my-4 mx-auto text-center small">&copy; 2014 Company name. Designed by Themezy. All rights reserved.</p>
+      </footer>
     </div>
-
   </div>
-</div>
-
-   
-
-
-  
-
-<!-- -----------------------------------cards end --------------------------- -->
-  
-
-<footer class="py-5 custom-bg">
-  <div class="d-flex justify-content-center align-items-center container">
-      <input placeholder="Enter Your Email to subscribe..." type="email" class="form-control rounded-5 w-50 p-3 ">
-      <button class="bg-primary text-white border-0 rounded-pill mx-3 p-3">Subscribe</button> 
-    <div>
-      <i class="fa-brands fa-facebook"></i>
-      <i class="fa-brands fa-twitter"></i>
-      <i class="fa-brands fa-google"></i>
-      <i class="fa-brands fa-pinterest"></i>
-    </div>  
-  </div>
-  <p class="text-white w-50 my-5 mx-auto ">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
-</footer>
-
-
-
-
 
   <script src="./JS/bootstrap.bundle.min.js"></script>
   <script src="./JS/main.js"></script>
