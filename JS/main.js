@@ -53,7 +53,7 @@ async function getLocation(location) {
 // INITIAL PAGE LOAD
 // ========================================
 // When the page first loads, automatically get weather for Cairo
-getLocation("Cairo");
+getLocation("cairo");
 
 // ========================================
 // FUNCTION: search()
