@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Camera - Weather Pro</title>
+
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./CSS/fontawesome-free-6.6.0-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+  <div class="app-bg">
+    <div class="weather-container">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg modern-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <div class="logo-circle">
+              <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+            <span class="text-white fw-bold brand-text">Weather Pro</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="news.html">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active-link" aria-current="page" href="live-camera.html">Live Camera</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Camera Header -->
+      <div class="page-header">
+        <h1 class="page-title"><i class="fa-solid fa-video"></i> Live Weather Cameras</h1>
+        <p class="page-subtitle">Watch real-time weather conditions from around the world</p>
+      </div>
+
+      <!-- Camera Grid -->
+      <div class="camera-container">
+        <div class="camera-grid">
+          <!-- Camera 1 -->
+          <div class="camera-card">
+            <div class="camera-preview">
+              <div class="camera-placeholder">
+                <i class="fa-solid fa-camera"></i>
+                <span class="live-badge">LIVE</span>
+              </div>
+            </div>
+            <div class="camera-info">
+              <h3 class="camera-location"><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</h3>
+              <p class="camera-details">Downtown Area - 360° View</p>
+              <div class="camera-stats">
+                <span><i class="fa-solid fa-temperature-half"></i> 27°C</span>
+                <span><i class="fa-solid fa-eye"></i> 1.2K viewers</span>
+              </div>
+              <button class="camera-btn">Watch Live <i class="fa-solid fa-play"></i></button>
+            </div>
+          </div>
+
+          <!-- Camera 2 -->
+          <div class="camera-card">
+            <div class="camera-preview">
+              <div class="camera-placeholder">
+                <i class="fa-solid fa-camera"></i>
+                <span class="live-badge">LIVE</span>
+              </div>
+            </div>
+            <div class="camera-info">
+              <h3 class="camera-location"><i class="fa-solid fa-location-dot"></i> Alexandria, Egypt</h3>
+              <p class="camera-details">Mediterranean Coast</p>
+              <div class="camera-stats">
+                <span><i class="fa-solid fa-temperature-half"></i> 24°C</span>
+                <span><i class="fa-solid fa-eye"></i> 856 viewers</span>
+              </div>
+              <button class="camera-btn">Watch Live <i class="fa-solid fa-play"></i></button>
+            </div>
+          </div>
+
+          <!-- Camera 3 -->
+          <div class="camera-card">
+            <div class="camera-preview">
+              <div class="camera-placeholder">
+                <i class="fa-solid fa-camera"></i>
+                <span class="live-badge">LIVE</span>
+              </div>
+            </div>
+            <div class="camera-info">
+              <h3 class="camera-location"><i class="fa-solid fa-location-dot"></i> Sharm El Sheikh</h3>
+              <p class="camera-details">Beach Resort View</p>
+              <div class="camera-stats">
+                <span><i class="fa-solid fa-temperature-half"></i> 29°C</span>
+                <span><i class="fa-solid fa-eye"></i> 2.1K viewers</span>
+              </div>
+              <button class="camera-btn">Watch Live <i class="fa-solid fa-play"></i></button>
+            </div>
+          </div>
+
+          <!-- Camera 4 -->
+          <div class="camera-card">
+            <div class="camera-preview">
+              <div class="camera-placeholder">
+                <i class="fa-solid fa-camera"></i>
+                <span class="live-badge">LIVE</span>
+              </div>
+            </div>
+            <div class="camera-info">
+              <h3 class="camera-location"><i class="fa-solid fa-location-dot"></i> Luxor, Egypt</h3>
+              <p class="camera-details">Nile Valley Panorama</p>
+              <div class="camera-stats">
+                <span><i class="fa-solid fa-temperature-half"></i> 31°C</span>
+                <span><i class="fa-solid fa-eye"></i> 654 viewers</span>
+              </div>
+              <button class="camera-btn">Watch Live <i class="fa-solid fa-play"></i></button>
+            </div>
+          </div>
+
+          <!-- Camera 5 -->
+          <div class="camera-card">
+            <div class="camera-preview">
+              <div class="camera-placeholder">
+                <i class="fa-solid fa-camera"></i>
+                <span class="live-badge">LIVE</span>
+              </div>
+            </div>
+            <div class="camera-info">
+              <h3 class="camera-location"><i class="fa-solid fa-location-dot"></i> Hurghada, Egypt</h3>
+              <p class="camera-details">Red Sea Marina</p>
+              <div class="camera-stats">
+                <span><i class="fa-solid fa-temperature-half"></i> 28°C</span>
+                <span><i class="fa-solid fa-eye"></i> 1.5K viewers</span>
+              </div>
+              <button class="camera-btn">Watch Live <i class="fa-solid fa-play"></i></button>
+            </div>
+          </div>
+
+          <!-- Camera 6 -->
+          <div class="camera-card">
+            <div class="camera-preview">
+              <div class="camera-placeholder">
+                <i class="fa-solid fa-camera"></i>
+                <span class="live-badge">LIVE</span>
+              </div>
+            </div>
+            <div class="camera-info">
+              <h3 class="camera-location"><i class="fa-solid fa-location-dot"></i> Aswan, Egypt</h3>
+              <p class="camera-details">High Dam Viewpoint</p>
+              <div class="camera-stats">
+                <span><i class="fa-solid fa-temperature-half"></i> 33°C</span>
+                <span><i class="fa-solid fa-eye"></i> 432 viewers</span>
+              </div>
+              <button class="camera-btn">Watch Live <i class="fa-solid fa-play"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="modern-footer">
+        <div class="footer-content">
+          <div class="subscribe-section">
+            <input placeholder="Enter your email to subscribe..." type="email" class="footer-input">
+            <button class="subscribe-btn">Subscribe</button>
+          </div>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <p class="copyright">&copy; 2025 Weather Pro. Designed with ❤️ by Saif. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="./JS/bootstrap.bundle.min.js"></script>
+</body>
+</html>
